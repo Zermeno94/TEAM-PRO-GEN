@@ -1,11 +1,8 @@
-<!-- HTML File Form
-email address
-github username
- github profile will need to open new tab 
 
-
- HTML webpage 
-five boxes listing employee name, titles, and other key info -->
+//  HTML webpage 
+// five boxes listing employee name, titles, and other key info -->
+function generateHTML(date){
+    return `
 
 <!DOCTYPE html>
     <html lang="en">
@@ -64,5 +61,7 @@ five boxes listing employee name, titles, and other key info -->
                     <li class="list-group-item">GitHub: </li>
                 </ul>
                 </div>
-    </div> </div>
-</div>
+    </div> </div>`
+}
+
+module.exports = generateHTML;
