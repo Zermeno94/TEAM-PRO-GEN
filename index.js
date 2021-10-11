@@ -5,8 +5,8 @@ const generateHTML = require('./utils/generateHTML.js');
 
 
 //Prompt the user questions 
-function promptUser(){
-     inquirer.prompt([
+const promptUser = () => {
+     return inquirer.prompt([
         {
             type: "input",
             name: "member name",
@@ -33,46 +33,16 @@ function promptUser(){
             message: "Please enter team member's email address"
         },
        
-    ]).then((input) => {
-
-        const message= generateHtml(input)
-        console.log("adding team member");
-        fs.appendFile("./src/html", data, function (err) {
-            if (err) {
-                return reject(err);
-            };
-            return resolve();
-        
-    }).catch(function(){
-        console.log("promise rejected")
-    }) 
-
+    ]);
+     
 };
 
-  const init= () => { // Prints out README.md to 'output' file 
-    promptUser()
-    // console.log('Successfully wrote to README.MD');
-        
-  };
+// initilalize the application 
+    const init = () => {
+        promptUser()
+        .then((input) => fs.writeFileSync("./src/inde.html", generateHTML(input))) // to use prompts and create hmtl 
+        .then(() => console.log("You created a index.html!"))
+        .catch((err) => console.error(err));
+    };
 
-  init();  
-
-
-// Need to include variables for employess
-
-
-
-
-// Questions to user//
-// manager's name
-// employee ID 
-// email address
-//office number 
-
-// present with a menu w/ the option to add an engineer or an intern or finish building my team 
-
-// select engineer option 
-// prompt to enter : engineer's name, ID, email, and GitHub username 
-//taken back to the menu
-
-// same thing for intern
+    init( );
