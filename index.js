@@ -1,10 +1,7 @@
 // Exporting and Internal packages 
 const fs = require("fs");
 const inquirer = require("inquirer");
-const Manager = require("./lib/Manager.js");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
-const Employee = require("./lib/Employee");
+const generateHTML = require('./utils/generateHTML.js');
 
 
 //Prompt the user questions 
@@ -38,9 +35,13 @@ function promptUser(){
        
     ]).then((input) => {
 
-        const message= generateMarkdown(input)
-        fs.writeFileSync('./output/readme.md',message, (err)=>err? console.log(err): console.log(generateReadme)); 
-        console.log(input)
+        const message= generateHtml(input)
+        console.log("adding team member");
+        fs.appendFile("./src/html", data, function (err) {
+            if (err) {
+                return reject(err);
+            };
+            return resolve();
         
     }).catch(function(){
         console.log("promise rejected")
