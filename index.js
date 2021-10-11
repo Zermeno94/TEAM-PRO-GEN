@@ -1,7 +1,7 @@
 // Exporting and Internal packages 
 const fs = require("fs");
 const inquirer = require("inquirer");
-const generateHTML = require('./utils/generateHTML.js');
+const generateHTML = require('./utils/generateHtml.js');
 
 
 //Prompt the user questions 
@@ -40,7 +40,7 @@ const promptUser = () => {
 // initilalize the application 
     const init = () => {
         promptUser()
-        .then((input) => fs.writeFileSync("./output/inde.html", generateHTML(input))) // to use prompts and create hmtl 
+        .then((input) => fs.writeFileSync("./utils/index.html", generateHTML(input))) // to use prompts and create hmtl 
         .then(() => console.log("You created a index.html!"))
         .catch((err) => console.error(err));
     };
