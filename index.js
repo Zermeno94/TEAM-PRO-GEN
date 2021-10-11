@@ -40,7 +40,7 @@ const promptUser = () => {
 // initilalize the application 
     const init = () => {
         promptUser()
-        .then((input) => fs.writeFileSync("./src/inde.html", generateHTML(input))) // to use prompts and create hmtl 
+        .then((input) => fs.writeFileSync("./output/inde.html", generateHTML(input))) // to use prompts and create hmtl 
         .then(() => console.log("You created a index.html!"))
         .catch((err) => console.error(err));
     };
