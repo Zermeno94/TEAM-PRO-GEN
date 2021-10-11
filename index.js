@@ -1,7 +1,7 @@
 // Exporting and Internal packages 
 const fs = require("fs");
 const inquirer = require("inquirer");
-const generateHTML = require('./utils/generateHtml.js');
+const generateHTML = require("./utils/generateHTML.js");
 
 
 //Prompt the user questions 
