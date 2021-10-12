@@ -8,6 +8,17 @@ describe("Employee", () =>{ //create new employee
         expect(employee.email).toEqual("email.4@gmail.com");
     });
 
+    it("should provide error", () => {
+        const throwBack= new Employee();
+        expect(throwBack).toThrow();
+    });
+
+    it("should provide an error if name only is provided", () =>{
+        const throwBack = () => new Employee("Miranda");
+        expect(throwBack).toThrow(err);
+    });
+
+
 })
 
 
