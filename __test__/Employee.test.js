@@ -1,18 +1,15 @@
 const Employee= require ("./lib/Employee");
 
 describe("Employee", () =>{ //create new employee
-    it("Create Employee", () => {
-        const employee = new Employee();
-        expect(new(employee)).toBe("new");
+    it("should create employee name, id, and email ", () => {
+        const employee = new Employee("Miranda", 11, "email.4@gmail.com");
+        expect(employee.name).toEqual("Miranda");
+        expect(employee.id).toEqual(11);
+        expect(employee.email).toEqual("email.4@gmail.com");
     });
 
-    it("Create name of employee", ()=>{ // name of employee
-        const name =" ";
-        const employee = new Employee(name);
-        expect(employee.name).toBe(name);
-    })
-
 })
+
 
 //email of employee 
 
