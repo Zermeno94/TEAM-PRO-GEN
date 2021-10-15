@@ -10,12 +10,12 @@ const promptUser = () => {
         {
             type: "input",
             name: "member name",
-            message: "Enter team member's name?",
+            message: "Enter team member's name:",
         },
         {
             type: "list",
             name: "role",
-            message: "Select team member's role. ",
+            message: "Select team member's role.:",
             choices: [
                 "Manager",
                 "Engineer",
@@ -25,12 +25,12 @@ const promptUser = () => {
         {
             type: "input",
             name: "id",
-            message: "Enter team member's id. ",
+            message: "Enter team member's id: ",
         },
         {
             type: "input",
             name: "email",
-            message: "Please enter team member's email address"
+            message: "Please enter team member's email address:"
         },
        
     ]);
