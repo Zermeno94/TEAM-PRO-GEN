@@ -36,7 +36,7 @@ describe("Employee", () => {
         it("Can get id via getId()", () => {
             const eTest = 4;
             const employee = new Employee("Miranda", eTest);
-            expect(engineer.getId()).toEqual(eTest);
+            expect(employee.getId()).toEqual(eTest);
         });
     });
         
@@ -51,7 +51,7 @@ describe("Employee", () => {
     describe("getRole", () => {
         it("getRole() should return \"Employee\"", () => {
             const eTest = "Employee";
-            const e = new Employee("Miranda", 4, "email.4@gmail.com");
+            const employee = new Employee("Miranda", 4, "email.4@gmail.com");
             expect(employee.getRole()).toEqual(eTest);
         });
     });
