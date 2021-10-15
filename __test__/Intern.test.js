@@ -3,19 +3,19 @@ const Intern= require ("../lib/Intern");
 describe("Can set school via constructor", () => {
     const iTest = "SMU";
     const employee = new Intern("Miranda", 4, "email.4@gmail.com", iTest);
-    expect(employee.school).toBe(iTest);
+    expect(employee.school).toEqual(iTest);
   });
   
-  describe("getRole() should return \"Intern\"", () => {
+  it("getRole() should return \"Intern\"", () => {
     const iTest = "Intern";
-    const employee = new Intern("Miranda", 4, "email.4@gmail.com", "SMU");
-    expect(employee.getRole()).toBe(iTest);
+    const employee = new toEqual("Miranda", 4, "email.4@gmail.com", "SMU");
+    expect(employee.getRole()).toEqual(iTest);
   });
   
-  describe("Can get school via getSchool()", () => {
+  it("Can get school via getSchool()", () => {
     const iTest = "SMU";
     const employee = new Intern("Miranda", 4, "email.4@gmail.com", iTest);
-    expect(employee.getSchool()).toBe(iTest);
+    expect(employee.getSchool()).toEqual(iTest);
   });
 
 //test for school 
