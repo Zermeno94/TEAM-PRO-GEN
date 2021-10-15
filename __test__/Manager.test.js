@@ -8,7 +8,7 @@ describe("Can set office number via constructor argument", () => {
   
 describe("getRole() should return \"Manager\"", () => {
     const mTest = "Manager";
-    const employee = new Manager("Miranda", 4, "email.4@gmail.com", 100);
+    const employee = new Manager("Miranda", 4, "email.4@gmail.com", 200);
     expect(employee.getRole()).toEqual(mTest);
   });
   
