@@ -26,7 +26,7 @@ describe("Employee", () => {
 
     describe("getName", () => {
         it("Can get name via getName()", () => {
-            const eTest = "Alice";
+            const eTest = "Miranda";
             const employee = new Employee(eTest);
             expect(employee.getName()).toEqual(eTest);
         });
