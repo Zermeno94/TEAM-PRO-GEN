@@ -23,90 +23,12 @@ function generateHTML( input){
         <title>TEAM-PRO-GEN</title>
     </head>
     <body>
-        <div class = "container-fluid">
-            <div class = "row d-flex justify-content-center">   
-                <h1 class = "text-center"> My Team of Workers </h1>
-            </div>
-        </div>
-        <div class = "container">
-            <div class = "row d-flex justify-content-center">
-                // ${x ? '1' : x ? '2' : '3'}
-                ${generateEngineer(eEngineer)}
-                ${generateIntern(eIntern)}
-                
-                
-            </div>
-        </div>
-    </body>`
-}
+        <header class='banner valign-wrapper '>
+            <h1 class='center-align'>Nakama Info Generator</h1>
+        </header>
+        <div class="container">`;
 
-function generateEngineer(eEngineer) {
-
-    let engineerHTML= "";
-    for (i=0; i < eEngineer.length; i ++) {
-
-    engineerHTML += `<div class = "col-sm-4">
-    <div class = "card employee-card">
-        <div class = "card-header">
-            <h2 class = "card-title">${eEngineer[i].name}</h2>
-            <h3 class = "card-title">Engineer</h3>
-        </div>
-        <div class = "card-body">
-            <ul class = "list-group">
-                <li class = "list-group-item">ID: ${eEngineer[i].id}</li>
-                <li class="list-group-item">Email: <a href="mailto:${eEngineer[i].email}">${eEngineer[i].email}</a></li>
-                <li class="list-group-item">GitHub: <a href="https://github.com/${eEngineer[i].gitHub.gitHub}" target="_blank" rel="noopener noreferrer">${eEngineer[i].gitHub.gitHub}</a></li>
-            </ul>
-        </div>
-    </div>
-    </div>`
-    };
-    return engineerHTML;
-}
-
-function generateIntern(eIntern) {
-    let internHTML= "";
-    for (i=0; i < entern.length; i ++) {
-        internHTML += `<div class = "col-sm-4">
-        <div class = "card employee-card">
-            <div class = "card-header">
-                <h2 class = "card-title">${eIntern[i].name}</h2>
-                <h3 class = "card-title">Intern</h3>
-            </div>
-            <div class = "card-body">
-                <ul class = "list-group">
-                    <li class = "list-group-item">ID: ${eIntern[i].id}</li>
-                    <li class="list-group-item">Email: <a href="mailto:${eIntern[i].email}">${eIntern[i].email}</a></li>
-                    <li class="list-group-item">School: ${eIntern[i].school.school}</li>
-                </ul>
-            </div>
-        </div>
-        </div>`
-    };
-    return internHTML;
-}
-
-function generateManager(eManager) {
-    let managerHTML = "";
-    for (i=0; i < eManager.length; i ++) {
-        managerHTML += `<div class = "col-sm-4">
-        <div class = "card employee-card">
-            <div class = "card-header">
-                <h2 class = "card-title">${eManager[i].name}</h2>
-                <h3 class = "card-title">Manager</h3>
-            </div>
-            <div class = "card-body">
-                <ul class = "list-group">
-                    <li class = "list-group-item">ID: ${eManager[i].id}</li>
-                    <li class="list-group-item">Email: <a href="mailto:${eManager[i].email}">${eManager[i].email}</a></li>
-                    <li class="list-group-item">Office number: ${eManager[i].off.off}</li>
-                </ul>
-            </div>
-        </div>
-        </div>`
-    };
-    return managerHTML
-    
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script>
 }
 
 
