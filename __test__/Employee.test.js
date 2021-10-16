@@ -11,28 +11,28 @@ describe('Employee',()=>{
             expect(employee.email).toEqual('email.4@gmail.com');
         });
     });
-    describe('getName method test',()=>{
+    describe('getName  test',()=>{
         it('should return the name',()=>{
             const employee=new Employee('Miranda',4,'email.4@gmail.com');
 
             expect(employee.getName()).toEqual('Miranda');
         });
     });
-    describe('getId method test',()=>{
+    describe('getId  test',()=>{
         it('should return the id',()=>{
             const employee=new Employee('Miranda',4,'email.4@gmail.com');
 
             expect(employee.getId()).toEqual(4);
         });
     });
-    describe('getEmail method test',()=>{
+    describe('getEmail test',()=>{
         it('should return the email',()=>{
             const employee=new Employee('Miranda',4,'email.4@gmail..com');
 
             expect(employee.getEmail()).toEqual('email.4@gmail.com');
         });
     });
-    describe('getRole method test',()=>{
+    describe('getRole test',()=>{
         it('should return the Employee string',()=>{
             const employee=new Employee('Miranda',4,'email.4@gmail.com');
 

@@ -7,10 +7,9 @@ This application will provide an easy way to allow employers to generate a webpa
 ## Table of Contents 🔎
 - [Installation](#installation)
 - [Usage](#usage)
-- [Demo ](#live-link)
- -[GitHub & Deploy Link](#github&deploylink)
-- [Features](#features)
-- [Credits](#credits)
+- [Demo](#demo)
+ -[GitHub & Deploy Link](#githubdeploylink)
+- [Contributers](#contributers)
 - [Resources & Tutorials](#resources&tutorials)
 
 ### Installation  💾
