@@ -1,22 +1,30 @@
 const Engineer = require ("../lib/Engineer");
 
-describe("Engineer", () => {
-    const eTest= "GitHubUser";
-    const engineer= new Engineer("Miranda", 1, "email.4@gmail.com", etest);
-    expect(engineer.github).toEqual(eTest);
-  });
-  
-  describe("getRole() should return \"Engineer\"", () => {
-    const eTest = "Engineer";
-    const engineer = new Engineer("Miranda", 1, "email.4@gmail.com", "GitHubUser");
-    expect(engineer.getRole()).toEqual(eTest);
-  });
-  
-  describe("Can get GitHub username via getGithub()", () => {
-    const eTest = "GitHubUser";
-    const engineer = new Engineer("Miranda", 4, "email.4@gmail.com", eTest);
-    expect(engineer.getGithub()).toEqual(eTest);
-  });
-// test for GitHub
+describe('Engineer',()=>{
+  describe('Initialization',()=>{
+      it('create a manager object',()=>{
+          const engineer=new Engineer('Miranda',4,'email.4@gmail.com','zermenoHub');
 
-//test for role
+          expect(engineer.name).toEqual('Miranda');
+          expect(engineer.id).toEqual(4);
+          expect(engineer.email).toEqual('email.4@gmail.com');
+          expect(engineer.gitHub).toEqual('zermenoHub');
+      });
+  });
+  describe('gitHub test',()=>{
+      it('return the git hub user name',()=>{
+          const engineer=new Engineer('Miranda',4,'email.4@gmail.com','zermenoHub');
+
+          expect(engineer.gitHub()).toEqual('zermenoHub');
+      });
+  });
+  
+  describe('getRole test',()=>{
+      it('return the Engineer string',()=>{
+          const engineer=new Engineer('Miranda',4,'email.4@gmail.com','zermenoHub');
+
+          expect(engineer.getRole()).toEqual("Engineer");
+      });
+  });
+});
+

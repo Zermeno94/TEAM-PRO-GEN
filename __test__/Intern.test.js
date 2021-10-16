@@ -1,23 +1,30 @@
 const Intern= require ("../lib/Intern");
 
-describe("Can set school via constructor", () => {
-    const iTest = "SMU";
-    const employee = new Intern("Miranda", 4, "email.4@gmail.com", iTest);
-    expect(employee.school).toEqual(iTest);
+escribe('Intern',()=>{
+  describe('Initialization',()=>{
+      it(' create an Intern object',()=>{
+          const intern=new Intern('Miranda',4,'email.4@gmail.com','schoolName');
+
+          expect(intern.name).toEqual('Miranda');
+          expect(intern.id).toEqual(4);
+          expect(intern.email).toEqual('email.4@gmail.com');
+          expect(intern.school).toEqual('schoolName');
+      });
+  });
+  describe('getSchool test',()=>{
+      it('return the git hub user name',()=>{
+          const intern=new Intern('Miranda',4,'email.4@gmail.com','fooU');
+
+          expect(intern.getSchool()).toEqual('schoolName');
+      });
   });
   
-  it("getRole() should return \"Intern\"", () => {
-    const iTest = "Intern";
-    const employee = new toEqual("Miranda", 4, "email.4@gmail.com", "SMU");
-    expect(employee.getRole()).toEqual(iTest);
-  });
-  
-  it("Can get school via getSchool()", () => {
-    const iTest = "SMU";
-    const employee = new Intern("Miranda", 4, "email.4@gmail.com", iTest);
-    expect(employee.getSchool()).toEqual(iTest);
-  });
+  describe('getRole test',()=>{
+      it('return the Intern string',()=>{
+          const intern=new Intern('Miranda',4,'email.4@gmail.com','schoolName');
 
-//test for school 
+          expect(intern.getRole()).toEqual("Intern");
+      });
+  });
+});
 
-// test for role 

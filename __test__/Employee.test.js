@@ -1,62 +1,47 @@
 const Employee= require ("../lib/Employee");
 
-describe("Employee", () => {
-    it("Can instantiate Employee instance", () => {
-        const employee = new Employee();
-        expect(typeof(employee)).toEqual("object");
-    });
 
-    it("Can set name via constructor arguments", () => {
-        const name = "Miranda";
-        const employee = new Employee(name);
-        expect(employee.name).toEqual(name);
-    });
+describe('Employee',()=>{
+    describe('Initialization',()=>{
+        it('create an employee object',()=>{
+            const employee=new Employee('Miranda',4,'email.4@gmail.com');
 
-    it("Can set id via constructor argument", () => {
-        const eTest = 4;
-        const employee = new Employee("Miranda", eTest);
-        expect(employee.id).toEqual(eTest);
-    });
-
-    it("Can set email via constructor argument", () => {
-        const eTest = "email.4@gmail.com";
-        const e = new Employee("Miranda", 4, testValue);
-        expect(e.email).toEqual(testValue);
-    });
-
-    describe("getName", () => {
-        it("Can get name via getName()", () => {
-            const eTest = "Miranda";
-            const employee = new Employee(eTest);
-            expect(employee.getName()).toEqual(eTest);
+            expect(employee.name).toEqual('Miranda');
+            expect(employee.id).toEqual(4);
+            expect(employee.email).toEqual('email.4@gmail.com');
         });
     });
-        
-    describe("getId", () => {
-        it("Can get id via getId()", () => {
-            const eTest = 4;
-            const employee = new Employee("Miranda", eTest);
-            expect(employee.getId()).toEqual(eTest);
+    describe('getName method test',()=>{
+        it('should return the name',()=>{
+            const employee=new Employee('Miranda',4,'email.4@gmail.com');
+
+            expect(employee.getName()).toEqual('Miranda');
         });
     });
-        
-    describe("getEmail", () => {
-        it("Can get email via getEmail()", () => {
-            const eTest = "email.4@gmail.com";
-            const employee = new Employee("Miranda", 4 , eTest);
-            expect(employee.getEmail()).toEqual(eTest);
+    describe('getId method test',()=>{
+        it('should return the id',()=>{
+            const employee=new Employee('Miranda',4,'email.4@gmail.com');
+
+            expect(employee.getId()).toEqual(4);
         });
     });
-        
-    describe("getRole", () => {
-        it("getRole() should return \"Employee\"", () => {
-            const eTest = "Employee";
-            const employee = new Employee("Miranda", 4, "email.4@gmail.com");
-            expect(employee.getRole()).toEqual(eTest);
+    describe('getEmail method test',()=>{
+        it('should return the email',()=>{
+            const employee=new Employee('Miranda',4,'email.4@gmail..com');
+
+            expect(employee.getEmail()).toEqual('email.4@gmail.com');
         });
     });
-    
+    describe('getRole method test',()=>{
+        it('should return the Employee string',()=>{
+            const employee=new Employee('Miranda',4,'email.4@gmail.com');
+
+            expect(employee.getRole()).toEqual("Employee");
+        });
+    });
 });
+
+
 
 //email of employee 
 
