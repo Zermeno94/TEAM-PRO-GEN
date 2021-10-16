@@ -16,9 +16,15 @@ This application will provide an easy way to allow employers to generate a webpa
 ### Installation  💾
 User will need to install node dependencies. The application should use [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user. The application will be invoked by using the following command:
 
-npm install 
-
-node index.js
+```bash
+  npm install 
+``` 
+```bash
+  node index.js
+```
+```bash
+   npm tests
+```
 
 
 ### Usage ⚡
