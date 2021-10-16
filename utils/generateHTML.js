@@ -7,8 +7,8 @@ const Engineer = require("../lib/Engineer");
 const Intern = require("../lib/Intern");
 
 //  HTML webpage 
-function generateHTML(eManager,eEngineer,eIntern,){
-    console.log( eManager, eEngineer,eIntern);
+function generateHTML( input){
+    console.log( input.role);
     return `
     
     <!DOCTYPE html>
@@ -30,7 +30,7 @@ function generateHTML(eManager,eEngineer,eIntern,){
         </div>
         <div class = "container">
             <div class = "row d-flex justify-content-center">
-                ${generateManager(eManager)}
+                // ${x ? '1' : x ? '2' : '3'}
                 ${generateEngineer(eEngineer)}
                 ${generateIntern(eIntern)}
                 
