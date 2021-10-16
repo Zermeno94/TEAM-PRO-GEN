@@ -2,7 +2,7 @@ const Manager = require('../lib/Manager');
 
 describe('Manager',()=>{
     describe('Initialization ',()=>{
-        it('create an Manager object',()=>{
+        it('create an object for id and name',()=>{
             const manager=new Manager('Miranda',4,'email.4@gmail.com',11);
 
             expect(manager.name).toEqual('Miranda');

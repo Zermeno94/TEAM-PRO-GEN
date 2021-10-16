@@ -2,7 +2,7 @@ const Engineer = require ("../lib/Engineer");
 
 describe('Engineer',()=>{
   describe('Initialization',()=>{
-      it('create a manager object',()=>{
+      it('create an object for an id and name',()=>{
           const engineer=new Engineer('Miranda',4,'email.4@gmail.com','zermenoHub');
 
           expect(engineer.name).toEqual('Miranda');

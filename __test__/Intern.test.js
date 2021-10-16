@@ -2,7 +2,7 @@ const Intern= require ("../lib/Intern");
 
 escribe('Intern',()=>{
   describe('Initialization',()=>{
-      it(' create an Intern object',()=>{
+      it(' create an object for a id and name',()=>{
           const intern=new Intern('Miranda',4,'email.4@gmail.com','schoolName');
 
           expect(intern.name).toEqual('Miranda');
