@@ -22,7 +22,7 @@ User will need to install node dependencies. The application should use [Jest](h
   node index.js
 ```
 ```bash
-   npm tests
+   npm test
 ```
 
 
