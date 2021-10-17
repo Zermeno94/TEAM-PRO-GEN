@@ -28,7 +28,7 @@ function generateHTML() {
 </html>`;
 };
 
-function generateManager(employeeData){
+function genManager(employeeData){
     return `<div class="card" style="width: 18rem;">
     <div class="card-body">
             <h2>${employeeData.name}</h2>
@@ -43,7 +43,7 @@ function generateManager(employeeData){
 </div>`;
 };
 
-function generateEngineer(employeeData){
+function genEngineer(employeeData){
     return `<div class="card" style="width: 18rem;">
     <div class="card-body">
             <h2>${employeeData.name}</h2>
@@ -58,7 +58,7 @@ function generateEngineer(employeeData){
 </div>`;
 };
 
-function generateIntern(employeeData) {
+function genIntern(employeeData) {
     return `<div class="card" style="width: 18rem;>
     <div class="card-body">
             <h2>${employeeData.name}</h2>
@@ -75,4 +75,4 @@ function generateIntern(employeeData) {
 
 
 
-module.exports = generateHTML,generateManager, generateEngineer,generateIntern;
+module.exports = generateHTML,genManager, genEngineer,genIntern;
