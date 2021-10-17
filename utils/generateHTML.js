@@ -15,7 +15,7 @@ function generateHTML() {
     <div class="container">
               <div class="row justify-content-center" id="team-cards">
     <body>
-   < div class="card">
+   <div class="card">
     <div class="card-header">
      Welcome!
     </div>
@@ -28,46 +28,46 @@ function generateHTML() {
 </html>`;
 };
 
-function generateManager(input){
+function generateManager(employeeData){
     return `<div class="card" style="width: 18rem;">
     <div class="card-body">
-            <h2>${input.name}</h2>
-            <h3>${input.getRole()}</h3>
+            <h2>${employeeData.name}</h2>
+            <h3>${employeeData.getRole()}</h3>
         </div>
         <div class="card-text">
-            <li>ID: ${input.id}</li>
-            <li>Email: mailto: ${input.email}</li>
-            <li>Office number: ${input.officeNumber}</li>
+            <li>ID: ${employeeData.id}</li>
+            <li>Email: mailto: ${employeeData.email}</li>
+            <li>Office number: ${employeeData.officeNumber}</li>
         </div>
     </div>
 </div>`;
 };
 
-function generateEngineer(input){
+function generateEngineer(employeeData){
     return `<div class="card" style="width: 18rem;">
     <div class="card-body">
-            <h2>${input.name}</h2>
-            <h3>${input.getRole()}</h3>
+            <h2>${employeeData.name}</h2>
+            <h3>${employeeData.getRole()}</h3>
         </div>
         <div class="card-text">
-            <li>ID: ${input.id}</li>
-            <li>Email: mailto: ${input.email}</li>
-            <li>GitHub: ${input.github}</li>
+            <li>ID: ${employeeData.id}</li>
+            <li>Email: mailto: ${employeeData.email}</li>
+            <li>GitHub: ${employeeData.github}</li>
         </div>
     </div>
 </div>`;
 };
 
-function generateIntern(input) {
+function generateIntern(employeeData) {
     return `<div class="card" style="width: 18rem;>
     <div class="card-body">
-            <h2>${input.name}</h2>
-            <h3>${input.getRole()}</h3>
+            <h2>${employeeData.name}</h2>
+            <h3>${employeeData.getRole()}</h3>
         </div>
         <div class="card-text">
-            <li>ID: ${input.id}</li>
-            <li>Email: mailto: ${input.email}</li>
-            <li>School: ${input.school}</li>
+            <li>ID: ${employeeData.id}</li>
+            <li>Email: mailto: ${employeeData.email}</li>
+            <li>School: ${employeeData.school}</li>
         </div>
     </div>
 </div>`;

@@ -9,13 +9,13 @@ const promptUser = () => {
      return inquirer.prompt([
         {
             type: "input",
-            name: "member name",
+            name: "name",
             message: "Enter team member's name:",
         },
         {
             type: "list",
             name: "role",
-            message: "Select team member's role.:",
+            message: "Select team member's role:",
             choices: [
                 "Manager",
                 "Engineer",
@@ -26,6 +26,24 @@ const promptUser = () => {
             type: "input",
             name: "id",
             message: "Enter team member's id: ",
+        },
+        {
+            type: 'input',
+            name: 'officeNumber',
+            message: "What is the office number?",
+            when: (input) => input.role === "Manager"
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: "Please enter the intern's school?",
+            when: (input) => input.role === "Intern"
+        },
+        {
+            type: "input",
+            name: "github",
+            message: "Please enter team member's github username:",
+            when: (input) => input.role === "Engineer"
         },
         {
             type: "input",
