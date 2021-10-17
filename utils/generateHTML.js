@@ -20,7 +20,7 @@ function generateHTML() {
      Welcome!
     </div>
     <div class="card-body">
-      <h1 class="card-title">Employee information </h1> 
+      <h1 class="card-title">TEAM PRO GEN </h1> 
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"></script>
