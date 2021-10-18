@@ -1,4 +1,8 @@
-# 10 Object-Oriented Programming: TEAM-PRO-GEN
+# ✨ 10 OOP: TEAM-PRO-GEN ✨
+
+<br />
+
+![GitHub license](https://img.shields.io/badge/license-MIT-ff69b4.svg) <br />
 
 ## Description
 This application will provide an easy way to allow employers to generate a webpage that will showcase employees information. 
@@ -11,6 +15,7 @@ This application will provide an easy way to allow employers to generate a webpa
  -[GitHub & Deploy Link](#githubdeploylink)
 - [Contributers](#contributers)
 - [Resources & Tutorials](#resources&tutorials)
+- [License](#license)
 
 ### Installation  💾
 User will need to install node dependencies. The application should use [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user. The application will be invoked by using the following command:
@@ -50,4 +55,5 @@ Allows employers to  use  a command-line that takes in information of employees 
 * [https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md](#https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)
 
 
-
+## License 📍
+This project is license under MIT
