@@ -40,7 +40,7 @@ const promptUser = () => {
                     name: "office",
                     message: "Enter office number:"
                 }
-            ]).then.apply(function (managerInput){
+            ]).then(function (managerInput){
                 const  newManager = new Manager(managerInput.name,managerInput.email,managerInput.office);
         
             });
@@ -70,7 +70,7 @@ const promptUser = () => {
                 const  newEngineer = new Engineer(engineerInput.name, engineerInput.id,engineerInput.github,engineerInput.email);
                 console.log(newEngineer);
                 staffArray.push(newEngineer);
-                addUser();
+                
             })
         } else if (input.role === "Intern"){
             inquirer.prompt([
@@ -84,11 +84,13 @@ const promptUser = () => {
                     name: "school",
                     message: "Enter team member's college:"
                 }
+
+                // id and email 
             ]).then(function (internInput){
                 const newIntern = new Intern(internInput.name,internInput.school);
                 console.log(newIntern)
                 staffArray.push(newIntern);
-                addUser();
+                
             });
         } 
     })  .catch(function(err) {
@@ -99,7 +101,7 @@ const promptUser = () => {
 
     const init = () => {
         promptUser()
-        .then((input) => fs.writeFileSync("./utils/index.html", generateHTML(Engineer,Manager,Intern))) // to use prompts and create hmtl 
+        .then((input) => fs.writeFileSync("./utils/index.html", generateHTML(staffArray))) // to use prompts and create hmtl 
         .then(() => console.log("You created a index.html!"))
         .catch((err) => console.error(err));
     };
