@@ -77,3 +77,9 @@ function genIntern(employeeData) {
 
 
 module.exports = generateHTML,genManager, genEngineer,genIntern;
+
+//prompt to each employee
+// menu function, that allows user to add another teamber and if user wants to end prompt
+// need to store the object/values
+// use that sore method to pass in html()
+//

@@ -9,11 +9,11 @@ const Intern = require('./lib/Intern');
 // staff array 
 const staffArray = []; 
 
-function promptUser(userinput){
+const promptUser = () => {
     return inquirer.prompt([
         {
-            type: list,
-            name: role, 
+            type: "list",
+            name: "team memmber's role", 
             choices:[
                 "Manager",
                 "Engineer",
@@ -50,7 +50,7 @@ function promptUser(userinput){
                 staffArray.push(newEngineer);
                 addUser();
             });
-        } else if (res.role === "Manager"){
+        } else if (input.role === "Manager"){
             inquirer.prompt([
                 {
                     type: "input",
@@ -70,7 +70,7 @@ function promptUser(userinput){
             ]).then.apply(function (managerInput){
                 const  newManager = new Manager(managerInput.name,managerInput.email,managerInput.office);
             })
-        } else if (res.role === "Intern"){
+        } else if (input.role === "Intern"){
             inquirer.prompt([
                 {
                     type: "input",
