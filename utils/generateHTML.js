@@ -1,4 +1,5 @@
-function generateHTML() {
+function generateHTML(data) {
+    console.log(data);
     return `<!DOCTYPE html>
     <html lang="en">
       <head>
@@ -72,7 +73,7 @@ function genIntern(employeeData) {
     </div>
 </div>`;
 };
-
+// need function to call the data 
 
 
 module.exports = generateHTML,genManager, genEngineer,genIntern;
