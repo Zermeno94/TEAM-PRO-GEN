@@ -6,14 +6,14 @@ const generateHTML = require("./utils/generateHTML.js");
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern'); 
-// staff array 
-const staffArray = []; 
+
+const staffArray = [];
 
 const promptUser = () => {
     return inquirer.prompt([
         {
             type: "list",
-            name: "team memmber's role", 
+            name: "team member's role", 
             choices:[
                 "Manager",
                 "Engineer",
@@ -22,8 +22,30 @@ const promptUser = () => {
         },
     ]).then(function (input){
         console.log(input)
-        if(input.role === "Engineer"){
+        if(input.role === "Manager"){
             inquirer.prompt ([
+               
+                {
+                    type: "input",
+                    name: "name",
+                    message: "Enter team member's name:",
+                },
+                {
+                    type: "input",
+                    name: "email",
+                    message: "What is team member's email?"
+                },
+                {
+                    type: "input",
+                    name: "office",
+                    message: "Enter office number:"
+                }
+            ]).then.apply(function (managerInput){
+                const  newManager = new Manager(managerInput.name,managerInput.email,managerInput.office);
+        
+            });
+        } else if (input.role === "Engineer"){
+            inquirer.prompt([
                 {
                     type: "input",
                     name: "name",
@@ -49,26 +71,6 @@ const promptUser = () => {
                 console.log(newEngineer);
                 staffArray.push(newEngineer);
                 addUser();
-            });
-        } else if (input.role === "Manager"){
-            inquirer.prompt([
-                {
-                    type: "input",
-                    name: "name",
-                    message: "Enter team member's name:",
-                },
-                {
-                    type: "input",
-                    name: "email",
-                    message: "What is team member's email?"
-                },
-                {
-                    type: "input",
-                    name: "office",
-                    message: "Enter office number:"
-                }
-            ]).then.apply(function (managerInput){
-                const  newManager = new Manager(managerInput.name,managerInput.email,managerInput.office);
             })
         } else if (input.role === "Intern"){
             inquirer.prompt([
@@ -162,7 +164,7 @@ const promptUser = () => {
 // use that sore method to pass in html()
 //
 
-// // initilalize the application 
+
 //     const init = () => {
 //         promptUser()
 //         .then((input) => fs.writeFileSync("./utils/index.html", generateHTML(input))) // to use prompts and create hmtl 
