@@ -97,7 +97,7 @@ function promptUser(userinput){
 
     const init = () => {
         promptUser()
-        .then((input) => fs.writeFileSync("./utils/index.html", generateHTML(engineerInput,managerInput,internInput))) // to use prompts and create hmtl 
+        .then((input) => fs.writeFileSync("./utils/index.html", generateHTML(Engineer,Manager,Intern))) // to use prompts and create hmtl 
         .then(() => console.log("You created a index.html!"))
         .catch((err) => console.error(err));
     };
