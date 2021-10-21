@@ -1,6 +1,88 @@
-function generateHTML(data) {
-    console.log(data);
-    return `<!DOCTYPE html>
+const renderArr= [];
+
+const  genManager= (managerData) => {
+    return `<div class="card" style="width: 18rem;">
+    <div class="card-body">
+            <h2>${managerData.name}</h2>
+            <h3>${managerData.getRole()}</h3>
+        </div>
+        <div class="card-text">
+            <li>ID: ${managerData.id}</li>
+            <li>Email: mailto: ${managerData.email}</li>
+            <li>Office number: ${managerData.officeNumber}</li>
+        </div>
+    </div>
+</div>`;
+};
+
+
+const genEngineer = (engineerData) => {
+    return `                
+    <div class="card employee-card">
+        <div class="card-header">
+            <h2 class="card-title">${engineerData.name}</h2>
+            <h3 class="card-title"><i class="fas fa-hat-wizard"></i> ${engineerData.role}</h3>
+        </div>
+        <div class="card-body">
+            
+                <div class="group-item">ID: ${engineerData.id}</div>
+                <div class="group-item">Email: <a href="mailto: ${engineerData.email}">${ engineerData.email}</a></div>
+                <div class="group-item">GitHub: <a href="https://github.com/${engineerData.github}" target="_blank">${engineerData.github}</a></div>
+            
+        </div>
+    </div>
+    `
+};
+
+const genIntern = (internData) => {
+    return `  
+            <div class="card employee-card">
+                <div class="card-header">
+                    <h2 class="card-title">${internData.name}</h2>
+                    <h3 class="card-title"><i class="fas fa-user-ninja"></i> ${internData.role}</h3>
+                </div>
+                <div class="card-body">
+                    
+                        <div class="group-item">ID: ${internData.id}</div>
+                        <div class="group-item">Email: <a href="mailto:${internData.email}">${internData.email}</a></div>
+                        <div class="group-item">School: ${internData.school}</div>
+                    
+                </div>
+            </div>
+            `
+};
+
+const renderStaffArr = (staffArr) => {
+    staffArr.forEach(teamMember => {
+             
+        const role = teamMember.getRole()
+
+        switch(role) {
+            case 'Manager': 
+                const managerItem = genManager(teamMember );
+                renderArr.push(managerItem);
+                break;
+            case 'Engineer':
+                const engineerItem = genEngineer(teamMember );
+                renderArr.push(engineerItem);
+                break;
+            case 'Intern':
+                const internItem = genIntern(teamMember );
+                renderArr.push(internItem);
+                break;
+            default: 
+                return "Error in switch";
+        }
+
+    })
+    const finalStaff = renderArr.join(``)
+    return finalStaff;
+};
+
+
+function generateHTML(staffArr) {
+return `
+<!DOCTYPE html>
     <html lang="en">
       <head>
         <!-- Required meta tags -->
@@ -18,68 +100,24 @@ function generateHTML(data) {
     <body>
    <div class="card">
     <div class="card-header">
-     Welcome!
+     Welcome to TEAM PRO GEN!
     </div>
-    <div class="card-body">
-      <h1 class="card-title">TEAM PRO GEN </h1> 
+    <div class="card-container">
+    ${renderStaffArr(staffArr)}
     </div>
-  </div>
+  
+</section>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"></script>
 </body>
-</html>`;
-};
-
-function genManager(employeeData){
-    return `<div class="card" style="width: 18rem;">
-    <div class="card-body">
-            <h2>${employeeData.name}</h2>
-            <h3>${employeeData.getRole()}</h3>
-        </div>
-        <div class="card-text">
-            <li>ID: ${employeeData.id}</li>
-            <li>Email: mailto: ${employeeData.email}</li>
-            <li>Office number: ${employeeData.officeNumber}</li>
-        </div>
-    </div>
-</div>`;
-};
-
-function genEngineer(employeeData){
-    return `<div class="card" style="width: 18rem;">
-    <div class="card-body">
-            <h2>${employeeData.name}</h2>
-            <h3>${employeeData.getRole()}</h3>
-        </div>
-        <div class="card-text">
-            <li>ID: ${employeeData.id}</li>
-            <li>Email: mailto: ${employeeData.email}</li>
-            <li>GitHub: ${employeeData.github}</li>
-        </div>
-    </div>
-</div>`;
-};
-
-function genIntern(employeeData) {
-    return `<div class="card" style="width: 18rem;>
-    <div class="card-body">
-            <h2>${employeeData.name}</h2>
-            <h3>${employeeData.getRole()}</h3>
-        </div>
-        <div class="card-text">
-            <li>ID: ${employeeData.id}</li>
-            <li>Email: mailto: ${employeeData.email}</li>
-            <li>School: ${employeeData.school}</li>
-        </div>
-    </div>
-</div>`;
-};
-// need function to call the data 
+</html>`
+}
 
 
-module.exports = generateHTML,genManager, genEngineer,genIntern;
+module.exports = generateHTML;
 
-//prompt to each employee
+
+// prompt to each employee
 // menu function, that allows user to add another teamber and if user wants to end prompt
 // need to store the object/values
 // use that sore method to pass in html()
-//
+

@@ -1,177 +1,150 @@
-//node modules
-const fs = require("fs");
-const inquirer = require("inquirer");
-const generateHTML = require("./utils/generateHTML.js");
-//team members
-const Manager = require('./lib/Manager');
+// Node Modules 
+const fs = require('fs');
+const inquirer = require('inquirer');
+const generateHTML = require('./utils/generateHTML');
+const path = require('path');
+
+
+//team member classes 
+const Employee = require('./lib/Employee');
 const Engineer = require('./lib/Engineer');
-const Intern = require('./lib/Intern'); 
+const Manager = require('./lib/Manager');
+const Intern = require('./lib/Intern');
 
-const staffArray = [];
+// staff of employee array 
+const staffArr = [];
 
-const promptUser = () => {
-    return inquirer.prompt([
+//prompts to user 
+const employeeApplication = function () {
+
+const userInput = function () {
+   return inquirer.prompt([
         {
-            type: "list",
-            name: "team member's role", 
-            choices:[
+            type: 'list',
+            name: 'role',
+            message: 'Select team member to add?',
+            choices: [ 
                 "Manager",
                 "Engineer",
-                "Intern"
+                "Intern",        
             ]
-        },
-    ]).then(function (input){
-        console.log(input)
-        if(input.role === "Manager"){
-            inquirer.prompt ([
-               
-                {
-                    type: "input",
-                    name: "name",
-                    message: "Enter team member's name:",
-                },
-                {
-                    type: "input",
-                    name: "email",
-                    message: "What is team member's email?"
-                },
-                {
-                    type: "input",
-                    name: "office",
-                    message: "Enter office number:"
+        }
+   ])
+    //prompt to manager
+            .then((input) => {
+                if(input.role === "Manager") {
+                    // manager questions 
+                    return inquirer.prompt([
+                        {
+                            type: 'input',
+                            name: 'name',
+                            message: "Enter team member\'s name:"
+                        },
+                        {
+                            type: 'input',
+                            name: 'id',
+                            message: 'Enter team member\'s id:'
+                        },
+                        {
+                            type: 'input',
+                            name: 'email',
+                            message: 'What is team member\'s email?'
+                        },
+                        {
+                            type: 'input',
+                            name: 'office',
+                            message: "Enter team member\'s office number?"
+                        },
+                        //team member (manager)class that redirects to the staff array 
+                    ]).then(function (input) {
+                        const manager = new Manager(input.name, input.id, input.email, input.office);
+                        staffArr.push(manager)
+                        console.log('Success! You added a manager ✅	 ') // console log to user once roles prompts are completed &  included emoji
+                        addNewEmployee()
+                    })
+                } else if (input.role === "Engineer") {
+                    return inquirer.prompt([
+                        {
+                            type: 'input',
+                            name: 'name',
+                            message: "Enter team member\'s name:"
+                        },
+                        {
+                            type: 'input',
+                            name: 'id',
+                            message: 'Enter team member\'s id:'
+                        },
+                        {
+                            type: 'input',
+                            name: 'email',
+                            message: 'What is team member\'s email?'
+                        },
+                        {
+                            type: 'input',
+                            name: 'github',
+                            message: "Enter team member\'s GitHub username:"
+                        },
+                    ]) .then(function (input) {
+                        const engineer = new Engineer(input.name, input.id, input.email, input.github)
+                        staffArr.push(engineer)
+                        console.log('Success! You added a engineer ✅	 ') // console log to user once roles prompts are completed &  included emoji
+                        addNewEmployee()
+                    })
+                } else if (input.role === "Intern") {
+                    return inquirer.prompt([
+                        {
+                            type: 'input',
+                            name: 'name',
+                            message: "Enter team member\'s name:"
+                        },
+                        {
+                            type: 'input',
+                            name: 'id',
+                            message: 'Enter team member\'s id:'
+                        },
+                        {
+                            type: 'input',
+                            name: 'email',
+                            message: 'What is team member\'s email?'
+                        },
+                        {
+                            type: 'input',
+                            name: 'school',
+                            message: "What school did team member attend?"
+                        },
+                    ]) .then(function(Input) {
+                        const intern = new Intern(Input.name, Input.id, Input.email, Input.school)
+                        staffArr.push(intern)
+                        console.log('Success! You added a intern ✅	 ')// console log to user once roles prompts are completed &  included emoji
+                        addNewEmployee()
+                    })              
                 }
-            ]).then(function (managerInput){
-                const  newManager = new Manager(managerInput.name,managerInput.email,managerInput.office);
-        
-            });
-        } else if (input.role === "Engineer"){
-            inquirer.prompt([
-                {
-                    type: "input",
-                    name: "name",
-                    message: "Enter team member's name:",
-                },
-                {
-                    type: "input",
-                    name: "id",
-                    message: "Enter team member's id: ",
-                },
-                {
-                    type: "input",
-                    name: "github",
-                    message: "What is team member's GitHub username?"
-                },
-                {
-                    type: "input",
-                    name: "email",
-                    message: "What is team member's email?"
-                }
-            ]).then(function(engineerInput){
-                const  newEngineer = new Engineer(engineerInput.name, engineerInput.id,engineerInput.github,engineerInput.email);
-                console.log(newEngineer);
-                staffArray.push(newEngineer);
-                
-            })
-        } else if (input.role === "Intern"){
-            inquirer.prompt([
-                {
-                    type: "input",
-                    name: "name",
-                    message: "Enter team member's name:",
-                },
-                {
-                    type: "input",
-                    name: "school",
-                    message: "Enter team member's college:"
-                }
+        })
 
-                // id and email 
-            ]).then(function (internInput){
-                const newIntern = new Intern(internInput.name,internInput.school);
-                console.log(newIntern)
-                staffArray.push(newIntern);
-                
-            });
-        } 
-    })  .catch(function(err) {
-        console.log(err);
+}
+
+const addNewEmployee = function () {
+    return inquirer.prompt([
+        {
+            type: "confirm",
+            name: "newMember",
+            message: "Do you want to add another  team member 💁‍♀️",    // askes user if they wish to enter another team member &  included emoji
+        }
+    ]).then((input) => {
+        if(input.addNewEmployee === true){
+            userInput();
+        } else {
+            console.log(staffArr[0].name)
+            inputCompleted(staffArr);
+        }
     });
 };
 
-
-    const init = () => {
-        promptUser()
-        .then((input) => fs.writeFileSync("./utils/index.html", generateHTML(staffArray))) // to use prompts and create hmtl 
-        .then(() => console.log("You created a index.html!"))
-        .catch((err) => console.error(err));
-    };
-
-    init( );
-
-
-// //Prompt the user questions 
-// const promptUser = () => {
-//      return inquirer.prompt([
-//         {
-//             type: "input",
-//             name: "name",
-//             message: "Enter team member's name:",
-//         },
-//         {
-//             type: "list",
-//             name: "role",
-//             message: "Select team member's role:",
-//             choices: [
-//                 "Manager",
-//                 "Engineer",
-//                 "Intern"
-//             ]
-//         },
-//         {
-//             type: "input",
-//             name: "id",
-//             message: "Enter team member's id: ",
-//         },
-//         {
-//             type: 'input',
-//             name: 'officeNumber',
-//             message: "What is the office number?",
-//             when: (input) => input.role === "Manager"
-//         },
-//         {
-//             type: 'input',
-//             name: 'school',
-//             message: "Please enter the intern's school?",
-//             when: (input) => input.role === "Intern"
-//         },
-//         {
-//             type: "input",
-//             name: "github",
-//             message: "Please enter team member's github username:",
-//             when: (input) => input.role === "Engineer"
-//         },
-//         {
-//             type: "input",
-//             name: "email",
-//             message: "Please enter team member's email address:"
-//         },
-       
-//     ]);
-     
-// };
-
-//prompt to each employee
-// menu function, that allows user to add another teamber and if user wants to end prompt
-// need to store the object/values
-// use that sore method to pass in html()
-//
-
-
-//     const init = () => {
-//         promptUser()
-//         .then((input) => fs.writeFileSync("./utils/index.html", generateHTML(input))) // to use prompts and create hmtl 
-//         .then(() => console.log("You created a index.html!"))
-//         .catch((err) => console.error(err));
-//     };
-
-//     init( );
+// pushes user answer/input to the generateHTML
+function inputCompleted(staffArr) {
+fs.writeFileSync("./utils/index.html",generateHTML(staffArr), "utf-8")
+console.log("Yay! You created a index.html 👏 ") //  console log to user that they have generated a index.html 
+    }
+userInput()
+}
+employeeApplication(); 
