@@ -30,6 +30,7 @@ User will need to install node dependencies. The application should use [Jest](h
    npm test
 ```
 
+<img width="1016" alt="Screen Shot 2021-11-02 at 6 56 30 PM" src="https://user-images.githubusercontent.com/87839888/139967648-0860d6b9-a05b-4d6f-82a6-c9c07ee0eec7.png">
 
 ### Usage ⚡
 Allows employers to  use  a command-line that takes in information of employees  and generate an HTML webpage that displays summaries for each individual. 
