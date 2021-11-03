@@ -47,7 +47,7 @@ Allows employers to  use  a command-line that takes in information of employees 
 ## Contributers
 * Miranda Zermeno
 * Private Tutor
-* Classmates: Chris Stallcup
+* Classmates: Chris Stallcup, Andrew T
 
 
 ## Resources & Tutorials  💻
