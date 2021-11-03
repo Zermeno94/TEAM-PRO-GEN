@@ -48,12 +48,15 @@ Allows employers to  use  a command-line that takes in information of employees 
 * Miranda Zermeno
 * Private Tutor
 * Classmates: Chris Stallcup, Andrew T
+* BCS Tutor: Serena Chandler
 
 
 ## Resources & Tutorials  💻
 
 * [https://www.youtube.com/watch?v=Jv2uxzhPFl4](#https://www.youtube.com/watch?v=Jv2uxzhPFl4)
 * [https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md](#https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)
+* [https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwjEvJXBjZvyAhXZbc0KHW9dDjsQPAgI](#https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwjEvJXBjZvyAhXZbc0KHW9dDjsQPAgI)
+* [https://stackoverflow.com/](#https://stackoverflow.com/)
 
 
 ## License 📍
