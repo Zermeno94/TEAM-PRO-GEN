@@ -37,7 +37,7 @@ Allows employers to  use  a command-line that takes in information of employees 
 
 ### Demo 🎥
 
-* [Link to Demo]()
+* [Link to Demo](https://watch.screencastify.com/v/g0Y1TyEex9aNs89MVOBm)
 
 ### GitHub & Deploy Link
 
